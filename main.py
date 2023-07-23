@@ -13,16 +13,11 @@ def send_welcome(message):
 def hi_reply(message):
     bot.reply_to(message, "Hello! how are you?")
 
-
 @bot.message_handler(commands=['time','time?'])
 def time_tell(message):
     now=datetime.now()
     date_time = str(now.strftime("%d/%m/%y, %H:%M:%S"))
     bot.reply_to(message, date_time)
-
-# @bot.message_handler(commands= [])
-# def anything(message):
-#     bot.reply_to(message, "I don't understand")
 
 @bot.message_handler(func=lambda message: True)
 def anything(message):
